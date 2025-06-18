@@ -5,12 +5,14 @@ public class PomodoroSession {
     private int pomodoroCount;
     private int cyclePomodoroCount;
     private int remainingSecondsInTimer;
+    private Long currentTaskId;
 
     public PomodoroSession() {
         this.currentState = PomodoroState.STOPPED;
         this.pomodoroCount = 0;
         this.cyclePomodoroCount = 0;
         this.remainingSecondsInTimer = 0;
+        this.currentTaskId = null;
     }
 
     public PomodoroState getCurrentState() {
@@ -55,5 +57,13 @@ public class PomodoroSession {
 
     public void setRemainingSecondsInTimer(int remainingSecondsInTimer) {
         this.remainingSecondsInTimer = remainingSecondsInTimer;
+    }
+
+    public Long getCurrentTaskId() {
+        return currentTaskId;
+    }
+
+    public void setCurrentTaskId(Long currentTaskId) {
+        this.currentTaskId = currentTaskId;
     }
 }
